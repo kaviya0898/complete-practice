@@ -1,0 +1,35 @@
+public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		int number=scanner.nextInt();
+		System.out.println(checkMagic(number));
+        
+
+		
+
+	}
+
+	private static boolean checkMagic(int number) {
+		int sum=0;
+		int temp=number;
+		while(number!=0)
+		{
+			sum+=cube(number%10);
+			number/=10;
+		}
+		if(sum==temp)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	private static int cube(int num) {
+		int sum=1;
+		for(int i=0;i<3;i++)
+		{
+			sum=sum*num;
+		}
+		return sum;
+	}
+
+}
