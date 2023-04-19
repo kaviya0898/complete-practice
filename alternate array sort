@@ -1,0 +1,56 @@
+public static void main(String[] args) {
+		 int[] arr = {5, 2, 8, 7, 4, 3, 9};
+	        alternateSort(arr);
+	        
+	        System.out.println("Output:");
+	        for (int num : arr) {
+	            System.out.print(num + " ");
+	        }
+	    }
+	    
+	    public static void alternateSort(int[] arr) 
+	    {
+	    	int len=arr.length;
+	    	
+	    	for(int index=0;index<len;index++)
+	    	{
+	    		if(index%2==0)
+	    		{
+	    			int max=Integer.MIN_VALUE;
+	    			int maxIndex=0;
+	    			for(int j=index;j<len;j++)
+	    			{
+	    				if(arr[j]>max)
+	    				{
+	    					max=arr[j];
+	    					maxIndex=j;
+	    				}
+	    			}
+	    			int temp=arr[index];
+	    			arr[index]=arr[maxIndex];
+	    			arr[maxIndex]=temp;
+	    		}
+	    		else
+	    		{
+	    			int min=Integer.MAX_VALUE;
+	    			int minIndex=0;
+	    			for(int j=index;j<len;j++)
+	    			{
+	    				if(arr[j]<min)
+	    				{
+	    					min=arr[j];
+	    					minIndex=j;
+	    				}
+	    			}
+	    			int temp=arr[index];
+	    			arr[index]=arr[minIndex];
+	    			arr[minIndex]=temp;
+	    		}
+	    	}
+	      
+	    }
+	
+	
+
+
+	}
