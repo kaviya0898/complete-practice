@@ -1,0 +1,18 @@
+public static void main(String[] args) {
+		   String str = "abc";
+	       printSubString(str,0,"");
+	       
+	    }
+
+	private static void printSubString(String str, int index, String process) {
+		if(index>=str.length())
+		{
+			System.out.println(process);
+			return;
+		}
+		
+		printSubString(str,index+1,process+str.charAt(index));
+		printSubString(str,index+1,process);
+		
+	}
+}
