@@ -1,0 +1,37 @@
+	String str="hello";
+		char array[]=str.toCharArray();
+		int start=0,end=array.length-1;
+		
+		while(start<=end)
+		{
+			if(!isVowel(array[start]))
+			{
+				start++;
+				continue;
+			}
+			if(!isVowel(array[end]))
+			{
+				end--;
+				continue;
+			}
+			char temp=array[start];
+			array[start]=array[end];
+			array[end]=temp;
+			start++;
+			end--;
+		}
+		for(int i=0;i<array.length;i++)
+		{
+			System.out.print(array[i]);
+		}
+	}
+
+	private static boolean isVowel(char c) {
+		
+		if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u')
+			return true;
+		if(c=='A'||c=='E'||c=='I'||c=='O'||c=='U')
+			return true;
+		return false;
+	}
+}
