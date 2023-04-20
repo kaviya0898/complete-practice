@@ -1,0 +1,26 @@
+public static void main(String[] args) {
+    int array[]= { 16,17,4,3,5,2};
+    int answer[]=new int[array.length];
+    int indexCount=array.length-1;
+    int max=array[array.length-1];
+    //System.out.print(max+" ");
+    answer[indexCount--]=max;
+    for(int index=array.length-2;index>=0;index--)
+    {
+    	if(array[index]>max)
+    	{
+    		//System.out.print(array[index]+" ");
+    		answer[indexCount--]=array[index];
+    		max=array[index];
+    	}
+    }
+    for(int i=0;i<answer.length;i++)
+    {
+    	if(answer[i]!=0)
+    	{
+    		System.out.print(answer[i]+" ");
+    	}
+    }
+		
+	}
+}
