@@ -1,0 +1,19 @@
+public static void main(String[] args) {
+    
+		String str="geeks quiz practice code";
+		subString(str,str.length()-1,"");
+	}
+
+	private static void subString(String str, int index,String answer) {
+		if(index<0)
+		{
+			System.out.print(answer);
+			return;
+		}
+		if(str.charAt(index)==' ')
+		{
+			System.out.print(answer+" ");
+			answer="";
+		}
+		subString(str,index-1,str.charAt(index)+answer);
+	}
