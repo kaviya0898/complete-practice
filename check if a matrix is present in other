@@ -1,0 +1,55 @@
+
+	public static void main(String[] args) {
+    
+		int matrix[][]= {{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15}};
+		int answer[][]= {{12,13},{17,18}};
+		for(int row=0;row<matrix.length;row++)
+		{
+			for(int column=0;column<matrix[0].length;column++)
+			{
+				System.out.print(matrix[row][column]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println(isPresent(matrix,answer));
+		
+	}
+
+	private static boolean isPresent(int[][] matrix, int[][] answer) {
+		for(int row=0;row<matrix.length;row++)
+		{
+			for(int column=0;column<matrix[0].length;column++)
+			{
+				if(matrix[row][column]==answer[0][0])
+				{
+					if(findMatrix(matrix,answer,row,column))
+					{
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+	private static boolean findMatrix(int[][] matrix, int[][] answer,int row,int column) {
+		
+		for(int i=row,arrayIndex=0;i<=answer.length&&arrayIndex<answer.length;i++,arrayIndex++)
+		{
+			for(int j=column,arrayColumn=0;j<=answer[0].length&&arrayColumn<answer[0].length;j++,arrayColumn++)
+				
+			{
+				if(matrix[i][j]!=answer[arrayIndex][arrayColumn])
+				{
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	
+	}
+
+
+
