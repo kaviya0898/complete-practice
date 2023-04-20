@@ -1,0 +1,27 @@
+public static void main(String[] args) {
+     int array[]= {11, 20, 13, 4, 8};
+     int threshold = 5;
+     int sum=0;
+     for(int index=0;index<array.length;index++)
+     {
+    	 System.out.println(array[index]+"="+findCount(array[index],threshold));
+    	 sum+=findCount(array[index],threshold);
+     }
+    System.out.println(sum);
+    
+	}
+
+	
+	private static int findCount(int number, int threshold) {
+		int temp=number;
+		int count=0;
+		if(number<threshold)
+		{
+			return 1;
+		}
+		while(temp>0)
+		{
+			temp=temp-threshold;
+			count++;
+		}
+		
