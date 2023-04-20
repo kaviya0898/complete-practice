@@ -1,0 +1,46 @@
+public class Practice {
+
+	public static void main(String[] args) {
+    
+		String str="house no : 123@ cbe";
+		char array[]=str.toCharArray();
+		int start=0;
+		int end=array.length-1;
+		
+		while(start<=end)
+		{
+			if(!isAlphabet(array[start]))
+			{
+				start++;
+				continue;
+			}
+			if(!isAlphabet(array[end]))
+			{
+				end--;
+				continue;
+			}
+			char temp=array[start];
+			array[start]=array[end];
+			array[end]=temp;
+			start++;
+			end--;
+		}
+		
+		for(int index=0;index<array.length;index++)
+		{
+			System.out.print(array[index]);
+		}
+		
+	}
+
+	private static boolean isAlphabet(char character) {
+		
+		if((character>='a'&& character<='z')||(character>='A' && character<='Z')||(character>='0' && character<='9'))
+			return true;
+		
+		return false;
+	}
+}
+
+
+
