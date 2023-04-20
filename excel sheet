@@ -1,0 +1,23 @@
+public static void main(String[] args) {
+    
+		int array[]= {1,26,27,676};
+		
+		for(int index=0;index<array.length;index++)
+		{
+			String answer="";
+			int temp=array[index];
+			while(array[index]>0)
+			{
+				int rem=(array[index]-1)%26;
+				answer+=(char)('A'+rem);
+				array[index]=(array[index]-1)/26;
+			}
+			String result="";
+			for(int i=answer.length()-1;i>=0;i--)
+			{
+				result+=answer.charAt(i);
+			}
+			System.out.println(temp+"   "+result);
+		}
+		
+	}
