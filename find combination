@@ -1,0 +1,19 @@
+public static void findCombinations(int[] arr, int sum) {
+        int left = 0;
+        int right = 0;
+        int currentSum = 0;
+
+        while (right < arr.length) {
+            currentSum += arr[right];
+            while (currentSum > sum) {
+                currentSum -= arr[left];
+                left++;
+            }
+            if (currentSum == sum) {
+                printSubarray(arr, left, right);
+                currentSum -= arr[left];
+                left++;
+            }
+            right++;
+        }
+    }
