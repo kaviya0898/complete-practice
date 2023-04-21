@@ -1,0 +1,39 @@
+public static void main(String[] args) {
+		String str="racecaraaaa";
+		int size=str.length()/2;
+		System.out.println(size);
+		
+		for(int i=0;i<=size;i++)
+		{
+			for(int j=0;j<=str.length()-1;j++)
+			{
+				if(i+j==size || j-i==size)
+				{
+					System.out.print(str.charAt(j));
+				}
+				else
+				{
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+		
+		for(int i=size+1;i<str.length();i++)
+		{
+			for(int j=0;j<=str.length()-1;j++)
+			{
+				if(i-j==size|| i+j==(size*2)+size)
+				{
+					System.out.print(str.charAt(j));
+				}
+				else
+				{
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+}
