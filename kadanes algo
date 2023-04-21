@@ -1,0 +1,23 @@
+public static void main(String[] args) {
+		int array[]= {-2, 7, 5, -1, 3, 2, 9, -7};
+		int meh=0,msf=Integer.MIN_VALUE;
+		
+		for(int index=0;index<array.length;index++)
+		{
+			if(array[index]<0)
+			{
+				meh=0;
+				continue;
+			}
+			meh+=array[index];
+			
+			if(meh<array[index])
+			{
+				meh=array[index];
+			}
+			if(msf<meh)
+			{
+				msf=meh;
+			}
+		}
+		System.out.println(msf);
