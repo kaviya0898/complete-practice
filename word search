@@ -1,0 +1,52 @@
+public static void main(String[] args) {
+		
+	    char board[][]= {{'a','z','o','l'},{'n','x','h','o'},{'v','y','i','v'},{'o','r','s','e'}};
+		
+		String array[]= {"van","zoho","love","are","is"};
+		
+		for(int index=0;index<array.length;index++)
+		{
+			if(isFound(array[index],board))
+			{
+				System.out.println(array[index]);
+			}
+		}
+	}
+
+	private static boolean isFound(String string,char[][]board) {
+		
+		for(int row=0;row<board.length;row++)
+		{
+			for(int column=0;column<board[0].length;column++)
+			{
+				if(board[row][column]==string.charAt(0)&& isPresent(board,row,column,string,0))
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	private static boolean isPresent(char[][] board, int row, int column, String string, int count) {
+		
+		if(count==string.length())
+		{
+			return true;
+		}
+		if(row<0 || column<0 || row>board.length-1 || column>board[0].length-1 || string.charAt(count)!=board[row][column])
+		{
+			return false;
+		}
+		char temp=board[row][column];
+		board[row][column]='*';
+		
+		
+		boolean found=isPresent(board,row+1,column,string,count+1)||
+				isPresent(board,row-1,column,string,count+1)||
+				isPresent(board,row,column+1,string,count+1)||
+				isPresent(board,row,column-1,string,count+1);
+		board[row][column]=temp;
+		
+		return found;
+	}
