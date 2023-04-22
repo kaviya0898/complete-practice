@@ -1,0 +1,16 @@
+String str="fbdjfhurd";
+	int array[]=new int[26];
+	
+	for(int index=0;index<str.length();index++)
+	{
+		array[str.charAt(index)-'a']++;
+	}
+	for(int index=array.length-1;index>=0;index--)
+	{
+		while(array[index]>0)
+		{
+			System.out.print((char)(index+'a'));
+			array[index]--;
+		}
+		
+	}
