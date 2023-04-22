@@ -1,0 +1,33 @@
+public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter number of test Cases");
+		int test=scanner.nextInt();
+		while(test!=0)
+		{
+			int start=scanner.nextInt();
+			int end=scanner.nextInt();
+			int array[]=new int[end-start+1];
+			for(int index=0;index<array.length;index++)
+			{
+				array[index]=start++;
+			}
+			shuffleArray(array);
+			for(int number:array)
+			{
+				System.out.print(number+" ");
+			}
+		}
+}
+
+	private static void shuffleArray(int[] array) {
+		Random rand=new Random();
+		for(int index=0;index<array.length;index++)
+		{
+			int number=rand.nextInt(index+1);
+			int temp=array[index];
+			array[index]=array[number];
+			array[number]=temp;
+		}
+		
+	}
+}
