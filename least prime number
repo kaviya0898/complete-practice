@@ -1,0 +1,53 @@
+	public static void main(String[] args) {
+		
+		int array1[]= {20,7};
+		int array2[]= {11,5};
+		int start=1;
+		for(int index=0;index<array1.length;)
+		{
+			if(givePrime(start))
+			{
+			if((array1[index]+start)%array2[index]==0)
+			{
+				System.out.print(start+" ");
+				start=1;
+				index++;
+			
+			}
+			else if(start<1000)
+			{
+				start++;
+				continue;
+			}
+			else
+			{
+				System.out.println("-1");
+				start=1;
+			}
+		}
+			else
+			{
+				start++;
+			}
+		
+	}
+	}
+
+	private static boolean givePrime(int number) {
+		int count=0;
+		int prime=0;
+		if(number==1 || number==2 || number==3)
+		{
+			return true;
+		}
+		for(int index=2;index<=number/2;index++)
+		{
+			if(number%index==0)
+			{
+				return false;
+			}
+		}
+		
+		return true;
+	}
+}
