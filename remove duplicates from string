@@ -1,0 +1,26 @@
+String str="we develop software we craft software";
+	String array[]=str.split(" ");
+	find(array[0],0,array);
+	
+	for(int i=0;i<array.length;i++)
+	{
+		if(array[i]!=" ")
+		System.out.print(array[i]+" ");
+	}
+	}
+
+	private static void find(String string,int index,String []array) {
+		
+		if(index>=array.length)
+		{
+			return;
+		}
+		for(int i=index+1;i<array.length;i++)
+		{
+			if(string.equals(array[i]))
+			{
+				array[i]=" ";
+			}
+		}
+		find(array[index],index+1,array);
+	
