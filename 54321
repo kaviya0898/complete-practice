@@ -1,0 +1,27 @@
+int n=10;
+	int size=n*2-1;
+	int array[][]=new int[size][size];
+	int first=0,last=size-1;
+	while(n!=0)
+	{
+		for(int row=first;row<=last;row++)
+		{
+			for(int column=first;column<=last;column++)
+			{
+				array[row][column]=n;
+			}
+		}
+		first++;
+		last--;
+		n--;
+	}
+	for(int row=0;row<array.length;row++)
+	{
+		for(int column=0;column<array.length;column++)
+		{
+			System.out.print(array[row][column]+" ");
+		}
+		System.out.println();
+	}
+	}
+}
