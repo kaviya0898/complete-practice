@@ -1,0 +1,20 @@
+int currency[]= {2000,1000,500,200,100,50,20,10,5,1};
+		Scanner scanner=new Scanner(System.in);
+		int money=scanner.nextInt();
+		int index=0;
+		System.out.printf("%5s %5s","currency","count");
+		System.out.println();
+		while(money!=0)
+		{
+			int count=0;
+			count=money/currency[index];
+			if(index<currency.length &&  count==0)
+			{
+				index++;
+				continue;
+			}
+			System.out.printf("%5s %5s",currency[index],count);
+			System.out.println();
+			money%=currency[index];
+			index++;
+		}
