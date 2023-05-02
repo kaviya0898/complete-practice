@@ -1,0 +1,47 @@
+package completePractice;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		String str=scanner.nextLine();
+		System.out.println();
+		//System.out.println(str);
+		for(int index=0;index<str.length();)
+		{
+			String answer="";
+			while(index<str.length() && str.charAt(index)!=' ')
+			{
+				answer+=str.charAt(index);
+				index++;
+			}
+			if(!palindrome(answer))
+			{
+				System.out.println(answer);
+			}
+			index++;
+		}
+
+	}
+
+	private static boolean palindrome(String answer) {
+
+		int start=0,end=answer.length()-1;
+		while(start<=end)
+		{
+			if(answer.charAt(start)!=answer.charAt(end))
+			{
+				return false;
+			}
+			start++;
+			end--;
+		}
+		return true;
+	}
+
+
+	}
+
+
