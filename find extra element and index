@@ -1,0 +1,35 @@
+
+	public static void main(String[] args) {
+		int array1[]= {-1, 0, 3, 2};
+		int array2[]= {3, 4, 0, -1, 2};
+		
+		int sum1=0,sum2=0;
+		
+		for(int index=0;index<array1.length;index++)
+		{
+			sum1+=array1[index];
+		}
+		for(int index=0;index<array2.length;index++)
+		{
+			sum2+=array2[index];
+		}
+		int diff=Math.abs(sum1-sum2);
+		int length1=0,length2=0;
+		
+		while(length1<array1.length || length2<array2.length)
+		{
+			if(length1<array1.length && array1[length1]==diff)
+			{
+				System.out.println(diff +"is at index"+" "+length1+" "+"at array1");
+			}
+			if(length2<array2.length && array2[length2]==diff)
+			{
+				System.out.println(diff +"is at index"+" "+length2+" "+"at array2");
+			}
+			length1++;
+			length2++;
+		}
+
+	}
+
+}
