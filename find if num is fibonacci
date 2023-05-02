@@ -1,0 +1,28 @@
+public static void main(String[] args) {
+		int array[]= {1 ,10 ,6 ,8 ,13, 21};
+		
+		for(int index=0;index<array.length;index++)
+		{
+			if(isSquare(5*array[index]*array[index]+4) || isSquare(5*array[index]*array[index]-4))
+			{
+				System.out.print(array[index]+" ");
+			}
+		}
+	    }
+
+	private static boolean isSquare(int num) {
+		int square=0;
+		
+		while(square*square<=num)
+		{
+			if(square*square==num)
+			{
+				return true;
+			}
+			square++;
+		}
+		
+		return false;
+	}
+	}
+
