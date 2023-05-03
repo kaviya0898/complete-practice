@@ -1,0 +1,76 @@
+public static void main(String []args) {
+		 Scanner scanner = new Scanner(System.in);
+
+	       System.out.println("enter the row size");
+	       int rowSize=scanner.nextInt();
+	       System.out.println("enter the column size");
+	       int columnSize=scanner.nextInt();
+	       
+	       int matrix[][]=new int[rowSize][columnSize];
+	       
+	       for(int row=0;row<rowSize;row++)
+	       {
+	    	   for(int column=0;column<columnSize;column++)
+	    	   {
+	    		   matrix[row][column]=scanner.nextInt();
+	    	   }
+	       }
+//	       for(int row=0;row<rowSize;row++)
+//	       {
+//	    	   for(int column=0;column<columnSize;column++)
+//	    	   {
+//	    		   System.out.print(matrix[row][column]);
+//	    	   }
+//	    	   System.out.println();
+//	       }
+	       
+	       String array[]=new String[rowSize];
+	       int index=0;
+	       
+	       for(int row=0;row<rowSize;row++)
+	       {
+	    	   String answer="";
+	    	   for(int column=0;column<columnSize;column++)
+	    	   {
+	    		   answer=answer+matrix[row][column]+"";
+	    	   }
+	    	   
+	    	   array[index]=answer;
+	    	   index++;
+	       }
+	      findDuplication(matrix,array);
+	    }
+
+	private static void findDuplication(int[][] matrix, String[] array) {
+		
+		for(int row=0;row<matrix.length;row++)
+	       {
+			String check="";
+			int count=0;
+	    	   for(int column=0;column<matrix[0].length;column++)
+	    	   {
+	    		   check=check+matrix[row][column]+"";
+	    	   }
+	    	   for(int index=0;index<array.length;index++)
+	    	   {
+	    		   if(check.equals(array[index]))
+	    		   {
+	    			   count++;
+	    			   if(count>1)
+	    			   {
+	    				   array[index]=" ";
+	    			   }
+	    		   }
+	    	   }
+	    	 }
+		for(int index=0;index<array.length;index++)
+		{
+			if(array[index]!=" ")
+			{
+				System.out.println(array[index]);
+			}
+		}
+		
+	}
+	}
+	
