@@ -1,0 +1,20 @@
+ Scanner scanner = new Scanner(System.in);
+
+	       int size=scanner.nextInt();
+	       
+	       for(int row=1;row<=size;row++)
+	       {
+	    	   for(int gap=row;gap<=size-1;gap++)
+	    	   {
+	    		   System.out.print(" ");
+	    	   }
+	    	   int temp=1;
+	    	   for(int column=1;column<=row;column++)
+	    	   {
+	    		   System.out.print(temp+" ");
+	    		   temp=temp*(row-column)/column;
+	    	   }
+	    	   System.out.println();
+	       }
+	    }
+	}
