@@ -1,0 +1,49 @@
+public static void main(String[] args) {
+		
+		 Scanner scanner = new Scanner(System.in);
+	     System.out.println("Enter a string");
+	     String str=scanner.nextLine();
+	     
+	     System.out.println(isTrue(str));
+	    }
+
+	private static boolean isTrue(String str) {
+		
+		int start=0,end=str.length()-1;
+		
+		while(start<=end)
+		{
+			if(!(isAlphabet(str.charAt(start))))
+			{
+				start++;
+				continue;
+			}
+			if(!(isAlphabet(str.charAt(end))))
+			{
+				end--;
+				continue;
+			}
+			if(str.charAt(start)!=str.charAt(end) && str.charAt(start)-32!=str.charAt(end) && str.charAt(start)+32!=str.charAt(end) )
+			{
+				return false;
+			}
+			start++;
+			end--;
+				
+			
+		}
+		return true;
+		
+	}
+
+	private static boolean isAlphabet(char character) {
+		
+		if((character>='a' && character<='z')||(character>='A' && character<='Z')||(character>='0' && character<='9'))
+		{
+			return true;
+		}
+	
+
+		
+		return false;
+	}
