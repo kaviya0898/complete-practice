@@ -1,0 +1,60 @@
+ 
+	public static void main(String[] args) {
+		int dt1[] = {1, 1, 2018};
+		int dt2[] = {1, 2, 2019};
+		
+		System.out.println(getDifference(dt1,dt2));
+		
+		
+		
+		
+	}
+
+	private static int getDifference(int[] dt1, int[] dt2) {
+		
+		int days[]= {31,28,31,30,31,30,31,31,30,31,30,31};
+		
+		boolean leap1=isLeap(dt1[2]);
+		boolean leap2=isLeap(dt2[2]);
+		
+		int days1=dt1[0];
+		int days2=dt2[0];
+		for(int index=0;index<dt1[1]-1;index++)
+		{
+			days1+=days[index];
+		}
+		if(leap1 && dt1[1]>2)
+		{
+			days1+=1;
+		}
+		for(int index=0;index<dt2[1]-1;index++)
+		{
+			days2+=days[index];
+		}
+		if(leap2 && dt2[1]>2)
+		{
+			days2+=1;
+		}
+		int totalDays=0;
+		for(int index=dt1[2];index<dt2[2];index++)
+		{
+			totalDays+=isLeap(index)?366:365;
+		}
+		return totalDays+days2-days1;
+	}
+
+	private static boolean isLeap(int year) {
+	
+		if((year%4==0 && year%100!=0)||(year%400==0))
+		{
+			return true;
+		}
+		return false;
+	}
+}
+
+
+
+
+
+
