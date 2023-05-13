@@ -1,0 +1,22 @@
+public static void main(String[] args) {
+	
+		 Scanner scanner = new Scanner(System.in);
+         System.out.println("Enter size");
+         int size=scanner.nextInt();
+         int n = 3;
+         int[] bits = new int[n];
+         generateBinary(bits, n, 0);
+     }
+
+     public static void generateBinary(int[] bits, int size, int index) {
+         if (index == size) {
+             for (int i = 0; i < size; i++) {
+                 System.out.print(bits[i] + " ");
+             }
+             System.out.println();
+         } else {
+             bits[index] = 0;
+             generateBinary(bits, size, index + 1);
+             bits[index] = 1;
+             generateBinary(bits, size, index + 1);
+         }
