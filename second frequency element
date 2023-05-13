@@ -1,0 +1,75 @@
+ 
+	public static void main(String[] args) {
+	
+		 Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Size of Array: ");
+	        int size = scanner.nextInt();
+
+	        int[] array = new int[size];
+
+	        System.out.print("Enter the elements: ");
+	        for (int i = 0; i < size; i++) 
+	        {
+	            array[i] = scanner.nextInt();
+	        }
+	        int frequency[]=new int[array.length];
+	        
+	        for(int index=0;index<array.length;index++)
+	        {
+	        	int count=1;
+	        	for(int check=index+1;check<array.length;check++)
+	        	{
+	        		if(array[check]!=Integer.MAX_VALUE && array[index]==array[check])
+	        		{
+	        			count++;
+	        			array[check]=Integer.MAX_VALUE;
+	        		}
+	        	}
+	        	if(array[index]==Integer.MAX_VALUE)
+	        	{
+	        		array[index]=0;
+	        	}
+	        	else
+	        	frequency[index]=count;
+	        }
+	        for(int i=0;i<frequency.length;i++)
+	        {
+	        	System.out.print(frequency[i]+" ");
+	        	
+	        }
+	        int secFrequency=findSecMax(frequency);
+	        System.out.println(secFrequency);
+	        for(int index=0;index<array.length;index++)
+	        {
+	        	if(frequency[index]==secFrequency)
+	        	{
+	        		System.out.println(array[index]);
+	        		break;
+	        	}
+	        }
+	        
+	        
+		
+	}
+
+	private static int findSecMax(int[] array) {
+		int max=array[0];
+        int secMax=Integer.MIN_VALUE;
+        
+        for(int index=1;index<array.length;index++)
+        {
+        	if(array[index]>max)
+        	{
+        		secMax=max;
+        		max=array[index];
+        	}
+        	else if(array[index]>secMax && array[index]<max)
+        	{
+        		secMax=array[index];
+        	}
+        }
+        return secMax;
+	}
+}
+
