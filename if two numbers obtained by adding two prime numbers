@@ -1,0 +1,38 @@
+	int number=100;
+		
+		System.out.println(find(number));	
+	}
+
+	private static boolean find(int number) {
+       
+		    boolean flag=true;
+			
+		    for(int index=2;index<number;index++)
+		    {
+		    	if(isPrime(index)&& isPrime(number-index))
+		    	{
+		    		if(index+(number-index)==number)
+		    		return true;
+		    	}
+		    }
+		return false;
+	}
+
+	private static boolean isPrime(int number) {
+		
+		if(number<=1)
+		{
+			return false;
+		}
+		for(int index=2;index<number;index++)
+		{
+			if(number%index==0)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	
+}
