@@ -1,0 +1,44 @@
+public static void main(String[] args) {
+	
+		Scanner scanner=new Scanner(System.in);
+		int number=scanner.nextInt();
+		int count=5;
+		System.out.println(checkPlaindrome(number,5));
+	}
+
+	private static int checkPlaindrome(int number,int count) {
+		
+		
+		int result=number+reverse(number);
+		int reversedNumber=reverse(result);
+		if(result==reversedNumber)
+		{
+			
+			return result;
+		}
+		count++;
+		if(count<=5)
+		return checkPlaindrome(result,count);
+		else
+			return 0;
+	}
+
+
+	private static int reverse(int number) {
+		
+		int reverse=0;
+		
+		while(number!=0)
+		{
+			int rem=number%10;
+			reverse=reverse*10+rem;
+			number/=10;
+		}
+		return reverse;
+		
+	}
+
+	
+
+	
+}
