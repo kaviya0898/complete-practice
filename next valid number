@@ -1,0 +1,36 @@
+public static void main(String[] args) {
+	
+		int array[]= {0,2,2,2,0,6,6,0,0,8};
+		
+		for(int index=1;index<array.length;index++)
+		{
+			if(array[index]==array[index-1])
+			{
+				array[index-1]*=2;
+				array[index]=0;
+			}
+		}
+		int left=0,right=0;
+		while(right<array.length)
+		{
+			if(array[right]!=0)
+			{
+				int temp=array[left];
+				array[left]=array[right];
+				array[right]=temp;
+				left++;
+			}
+			right++;
+		}
+		for(int index=0;index<array.length;index++)
+		{
+			System.out.print(array[index]+" ");
+		}
+		
+		
+		
+	}
+
+	
+	}
+
