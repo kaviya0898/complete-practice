@@ -1,0 +1,59 @@
+	 
+	public static void main(String[] args) {
+		String str="a12b10";
+		char temp=' ';
+		
+		for(int index=0;index<str.length();)
+		{
+			String limit="";
+			if(str.charAt(index)>='a' && str.charAt(index)<='z')
+			{
+				temp=str.charAt(index++);
+			}
+			while(index<str.length()&&str.charAt(index)>='0' &&str.charAt(index)<='9')
+			{
+				limit+=str.charAt(index);
+				index++;
+			}
+			int count=convertIntoInteger(limit);
+			
+			for(int i=0;i<count;i++)
+			{
+				System.out.print(temp);
+			}
+			
+		}
+	    }
+
+	private static int convertIntoInteger(String limit) {
+		
+		int number=0;
+		
+		for(int index=0;index<limit.length();index++)
+		{
+			number=number*10+(limit.charAt(index)-'0');
+		}
+		return number;
+	}
+	
+	
+
+
+	}
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+	
+
+	
+
