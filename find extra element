@@ -1,29 +1,47 @@
 public static void main(String[] args) {
 		
-		int array1[]= {-1, 0, 3, 2 };
-		int array2[]= {  3, 4, 0, -1, 2 };
-		int remaining=findSum(array1)-findSum(array2);
-		if(remaining<0)
+		int array[]= {-1, 0, 3, 2};
+		int secArray[]= { 3, 4, 0, -1, 2 };
+		int remaining=0;
+		
+		if(array.length<secArray.length)
 		{
-			remaining*=-1;
+		 remaining=findSum(secArray)-findSum(array);
+		}
+		else
+		{
+			remaining=findSum(array)-findSum(secArray);	
 		}
 		
-	    for(int index1=0,index2=0;index1<array1.length || index2<array2.length;index1++,index2++)
-	    {
-	    	if(index1<array1.length && array1[index1]==remaining)
-	    	{
-	    		System.out.println(remaining+"-"+index1);
-	    	}
-	    	if(index2<array2.length && array2[index1]==remaining)
-	    	{
-	    		System.out.println(remaining+"-"+index2);
-	    	}
-	    }
-	
+		if(findIndex(array,remaining)!=-1)
+		{
+			System.out.println(remaining+" "+"is the extra element in array1 with index"+" "+findIndex(array,remaining));
+		}
+		else
+		{
+			System.out.println(remaining+" "+"is the extra element in array2 with index"+" "+findIndex(secArray,remaining));
+		}
+		
+		
+		
+		
+	}
+
+	private static int findIndex(int[] array,int remaining) {
+		
+		
+		
+		for(int index=0;index<array.length;index++)
+		{
+			if(array[index]==remaining)
+				return index;
+		}
+		return -1;
 	}
 
 	private static int findSum(int[] array) {
 		int sum=0;
+		
 		for(int index=0;index<array.length;index++)
 		{
 			sum+=array[index];
@@ -31,3 +49,5 @@ public static void main(String[] args) {
 		return sum;
 	}
 }
+	
+
