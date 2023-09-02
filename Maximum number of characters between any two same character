@@ -1,0 +1,21 @@
+String input="FoR";
+		 int count=0;
+		 int max=Integer.MIN_VALUE;
+		 boolean flag=true;
+		 for(int index=0;index<input.length();index++)
+		 {
+			
+			 char character=input.charAt(index);
+			 
+			 for(int nextIndex=index+1;nextIndex<input.length();nextIndex++)
+			 {
+				 if(input.charAt(nextIndex)==character)
+				 {
+					 
+					 max=Math.max(nextIndex-index-1,max);
+				 }
+			 }
+		 }
+		 System.out.println(max);
+		}
+	}
