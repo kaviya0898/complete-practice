@@ -1,0 +1,56 @@
+ public static void main(String args[])
+	    {
+	    	int n=191;
+	    	System.out.println(isPrime(119));
+	    	if(isPrime(n)==false)
+	    	{
+	    		System.out.println("false");
+	    	}
+	    	else
+	    	{
+	    		System.out.println(finCyclic(n));
+	    	}
+	    	
+	    	
+        }
+
+		private static boolean finCyclic(int n) {
+			
+			String str=n+"";
+			int num=0;
+			for(int i=0;i<str.length();i++)
+			{
+				if(!isPrime(Integer.parseInt(str)))
+		    	{
+		    		return false;
+		    	}
+				str=str.charAt(str.length()-1)+str.substring(0,str.length()-1);
+			}
+			return true;
+		}
+
+		private static boolean isPrime(int n) {
+			if(n==1)
+				return false;
+			if(n==2 || n==3)
+			{
+				return true;
+			}
+			int count=0;
+			for(int i=2;i<=n;i++)
+			{
+				if(n%i==0)
+				{
+					count++;
+				}
+			}
+			return count>1?false:true;
+		}
+}
+	
+  
+
+
+
+	 
+	 
